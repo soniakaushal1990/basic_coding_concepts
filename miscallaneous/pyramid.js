@@ -15,10 +15,13 @@ Pyramid(3)
 */
 function pyramid(n){
     const midpoint = Math.floor((2*n-1)/2);
+    console.log(midpoint);
     for(i=0;i<n;i++){
         let level = '';
         for(j=0;j<2*n-1;j++){
             if(midpoint-i<=j  && midpoint+i>=j){
+               // console.log('mid point -i is'+midpoint-i);
+                //console.log('j is'+j);
                     level+='#';
             }
             else{
@@ -29,5 +32,5 @@ function pyramid(n){
     }
 
 }
-pyramid(5);
+pyramid(2);
 
