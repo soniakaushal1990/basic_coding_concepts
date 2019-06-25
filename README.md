@@ -1,2 +1,2 @@
 # basic_coding_concepts
-A repo to practice basic concepts of coding
+A repo to practice basic concepts of coding Javascript
