@@ -22,18 +22,18 @@ async function removeDuplicates(myArr, prop) {
   }
 }
 
-// function uniqueArray(arr) {
-//   var hashMap = {};
-//   var uniqueArr = [];
+function uniqueArray(arr) {
+  var hashMap = {};
+  var uniqueArr = [];
 
-//   for (var i = 0; i < arr.length; i++) {
-//     if (!hashMap.hasOwnProperty(arr[i])) {
-//       uniqueArr.push(arr[i]);
-//       hashMap[arr[i]] = i;
-//     }
-//   }
-//   return uniqueArr;
-// }
+  for (var i = 0; i < arr.length; i++) {
+    if (!hashMap.hasOwnProperty(arr[i])) {
+      uniqueArr.push(arr[i]);
+      hashMap[arr[i]] = i;
+    }
+  }
+  return uniqueArr;
+}
 var final_array = [];
 for(i=0;i<100;i++){
   if(i<10){
