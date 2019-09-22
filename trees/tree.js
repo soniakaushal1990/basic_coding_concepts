@@ -14,29 +14,34 @@ class Node{
 
 }
 class Tree{
- constructor(){
-     this.root = null;
- }
- traverseBF(tree){
-  console.log(tree);
-  const arr = [this.root];
-  while(arr.length){
-      
-  }
- }
-}
-var node = new Node("10");
-node.add("20");
-node.add("30");
-node.children[0].add("40");
-node.children[1].add("50");
+    constructor(){
+        this.root = null;
+    }
+    traverseBF(){
+        const arr = [this.root];
+    //   console.log(arr);
+       while(arr.length){
+         const node = arr.shift();  
+         arr.push(...node.children);
+       }
+       console.log(arr);
+    }
 
-//Traverse the tree
-var tree = new Tree();
-tree.traverseBF(node);
-//console.log(node.children[1]);
+}
+ const node = new Node("10");
+ node.add("20");
+ node.add("30");
+ node.add("40");
+ node.add("50");
+ const tree = new Tree();
+ tree.root = node;
+tree.traverseBF();
+//console.log(tree.root);
+
+
 
 
 
 
 module.export={Tree,Node};
+
