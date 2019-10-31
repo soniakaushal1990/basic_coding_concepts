@@ -112,13 +112,13 @@ class LinkedList{
 
         if(!this.head){
             this.head = new Node(data);
-            console.log(this.head);
+        //    console.log(this.head);
             return;
         }
 
         if(index==0){
           this.head = new Node(data,this.head);
-          console.log(this.head);
+        //  console.log(this.head);
            return;
             
         }
@@ -126,30 +126,25 @@ class LinkedList{
         let previous = this.getAt(index-1);
         const node = new Node(data,previous.next);
         previous.next = node;
-        console.log(previous);
+      //  console.log(previous);
 
     }
+
+    
+   
     
 
 }
 
- //const node = new Node(18);
- const list = new LinkedList();
- //list.head = node;
- list.insertFirst(16,list.head);
- list.insertFirst(15,list.head);
-// list.insertFirst(18,list.head);
-//console.log(list);
-//console.log(list.size());
-//list.getFirst();
-//console.log(list.getLast());
-//list.clear();
-//list.removeFirst();
-//console.log(list.removeLast());
-//const nodelast = 30;
-//list.inserLast(nodelast);
-//console.log(list.getAt(1));
-//list.removeAt(0);
-const node2 = 17;
-list.insertAt(node2,1);
-module.export = {Node,LinkedList};
+
+function midpoint(list) {
+    let slow = this.getFirst();
+    let fast = this.getFirst();
+    while (fast.next && fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    console.log(slow);
+    return slow;
+}
+module.exports = {Node,LinkedList,midpoint};

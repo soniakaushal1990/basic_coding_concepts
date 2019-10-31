@@ -61,6 +61,7 @@ class LinkedList{
     }
 
 }
+module.exports = {Node,LinkedList};
 const node = new Node(17);
 console.log("\n\n\n*******Adding a new node******");
 console.log(node);
