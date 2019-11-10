@@ -10,6 +10,7 @@ function threeNumSum(array,targetSum){
             const current_sum = array[i]+array[left]+array[right];
             if(current_sum == targetSum){
                 triplets.push([array[i],array[left],array[right]]);
+                //check why we are dercrementing both left and right
                 left++;
                 right--;
             }
