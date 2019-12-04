@@ -1,4 +1,4 @@
-const LinkedList = require('../linkedlist/index').LinkedList;
+const LinkedList = require('./index').LinkedList;
 //const midpoint =  require('../linkedlist/index').midpoint;
 
 

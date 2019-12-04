@@ -16,6 +16,7 @@ function largest_range(array) {
     for (const num of array) {
         nums[num] = true;
     }
+    console.log(nums);
     for (const num of array) {
         if (!nums[num]) continue;
         nums[num] = false;
@@ -40,6 +41,6 @@ function largest_range(array) {
     return best_range;
 
 }
-let array = [1, 11, 3, 0, 15, , 8, 5, 2, 4, 10, 7, 12, 6];
+let array = [1, 11, 3, 0, 15, 8, 5, 2, 4];
 console.log(largest_range(array));
 module.exports = largest_range;
