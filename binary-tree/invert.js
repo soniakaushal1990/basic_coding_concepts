@@ -2,7 +2,7 @@
 
 //Time Complexity O(n)  Space Complexity O(n)
 
-function binary_tree_invert(){
+function binary_tree_invert(tree){
     const queue=[tree];
     while(queue.length){
         const current=queue.shift();
