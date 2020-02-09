@@ -1,10 +1,6 @@
 // //Print the matrix in spiral form
 
-// [1,2,3,4,
-//   5,6,7,8,
-//   9,10,11,12,
-//   13,14,15,16
-// ]
+
 
 // console.log(spiral_matrix(4));
 // function spiral_matrix(n){
@@ -47,37 +43,36 @@
 //    return result;
 // }
 
+//Time Complexity is O(mn)
 
-
-function matrix(n) {
-    let result = new Array(n).fill().map(() => new Array(n).fill('')); // create empty n x n array
-    let counter = 1;
+function matrix(m,n,result) {
+    console.log(result);
     let startCol = 0;
     let endCol = n - 1;
     let startRow = 0;
-    let endRow = n - 1;
+    let endRow = m - 1;
     while (startCol <= endCol && startRow <= endRow) {
         for (let i = startCol; i <= endCol; i++) {
-            result[startRow][i] = counter;
-            counter++;
+            console.log(result[startRow][i]);
+          //  counter++;
         }
         startRow++;
         for (let j = startRow; j <= endRow; j++) {
-            result[j][endCol] = counter;
-            counter++;
+            console.log(result[j][endCol]);
+            //counter++;
         }
 
         endCol--;
 
         for (let i = endCol; i >= startCol; i--) {
-            result[endRow][i] = counter;
-            counter++;
+            console.log(result[endRow][i]);
+          
         }
 
         endRow--;
         for (let i = endRow; i >= startRow; i--) {
-            result[i][startCol] = counter;
-            counter++;
+            console.log(result[i][startCol]);
+           // counter++;
         }
 
         startCol++;
@@ -87,5 +82,11 @@ function matrix(n) {
     return result;
 
 }
-let result1 = matrix(4);
-console.log(result1);
+let array=[[1,2,3,4],
+  [5,6,7,8],
+  [9,10,11,12],
+  [13,14,15,16],
+  [17,18,19,20]
+];
+matrix(5,4,array);
+//console.log(result1);
