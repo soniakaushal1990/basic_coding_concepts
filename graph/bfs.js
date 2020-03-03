@@ -20,4 +20,7 @@ class Node{
         return array;
     }
 }
+let node = new Node(10);
+node.addchild(20);
+console.log(node);
 exports.Node = Node;

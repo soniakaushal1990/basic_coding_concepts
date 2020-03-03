@@ -4,7 +4,8 @@ function longestPalimdromSubstring(string){
     for(let i=0;i<string.length;i++){
         for(let j=0;j<string.length;j++){
             const substring=string.slice(i,j+1);
-            if(substring.length>longest.length&& isPalindrome(substring)){
+            console.log(substring);
+            if(substring.length>longest.length && isPalindrome(substring)){
                 longest=substring;
             }
         }
@@ -21,3 +22,4 @@ function isPalindrome(string){
     }
     return true;
 }
+console.log(longestPalimdromSubstring("abaxyzzyxf"));

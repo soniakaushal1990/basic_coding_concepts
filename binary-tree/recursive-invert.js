@@ -8,5 +8,5 @@ function invertBinarytree(tree){
 function swapBinaryTree(tree){
     const left = tree.left;
     tree.left=tree.right;
-    tree.right=tree.left;
+    tree.right=left;
 }
