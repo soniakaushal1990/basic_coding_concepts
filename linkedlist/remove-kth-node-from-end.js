@@ -19,9 +19,9 @@ function removeKthNodeFromEnd(head,k){
  //   console.log(second);
     if(second==null){
       
-        head.data=head.next.data;
+        head.value=head.next.value;
         head.next=head.next.next;
-        return head;
+        return;
     }
     while(second.next !==null){
         second=second.next;
