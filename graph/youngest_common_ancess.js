@@ -1,4 +1,4 @@
-
+// time O(d) space O(1) d is depth of lower descendant 
 function getYougestCommonAncestor(topAncestor,descendantOne,descendantTwo){
     const depthOne=getDescendantDepth(descendantOne,topAncestor);
     const depthTwo=getDescendantDepth(descendantTwo,topAncestor);

@@ -1,26 +1,15 @@
-//0 1 1 2
-//1 1 2 3 5
+
+//Time Complexity 2 power n 
+//at each step we call two more calls
+//Space compexity O(n) for n recursive calls 
 function fibonacci(n){
-    let a =[];
-    let sum ;
-    for(i=0;i<n;i++){
-            for(j=i-1;j<i;j++){
-                if (i==0 ){
-                    sum = 0
-                }
-                else if(i==1){
-                    sum =1;
-                }
-                
-                else{
-                    
-                    sum = a[i-1]+a[j-1];
-                }
-            a.push(sum);
-            process.stdout.write(`${sum} `);
-        
-        }
-    }
+    if(n===2)
+    return 1;
+    else if(n === 1)
+    return 0;
+    else 
+    return fibonacci(n-1)+fibonacci(n-2);
+
 }
-fibonacci(6);
+console.log(fibonacci(5));
 

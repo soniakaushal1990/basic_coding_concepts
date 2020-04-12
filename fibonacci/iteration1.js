@@ -1,15 +1,12 @@
-//0 1 1 2
-
-
-function fibonacci(n){
-
-    let result = [0,1];
-    for(i=2;i<n;i++){
-        const a = result[i-1];
-        const b = result[i-2];
-        result.push(a+b);
-    }
-    console.log(...result);
-
-}
+//Time Complexity O(n)
+//Space Cmplexity O(n)
+function getNthFib(n,memoize={1:0,2:1}) {
+    if(n in memoize){
+         return memoize[n];
+     }else{
+         memoize[n]=getNthFib(n-1,memoize)+getNthFib(n-2,memoize);
+         return memoize[n];
+     }
+ }
+ console.log(getNthFib(5));
 
