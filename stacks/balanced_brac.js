@@ -1,26 +1,26 @@
-function balanced_brackets(str) {
-    let array = [];
+function balancedBrackets(string) {
+    const stack = [];
     let closing_braces = '})]';
     let opening_braces = '{([';
-    let macthing_braces = {
+    let matching_braces = {
         ')': '(',
         ']': '[',
         '}': '{'
     };
-    for (const char of str) {
+    for (const char of string) {
         if (opening_braces.includes(char)) {      
-            array.push(char);
+            stack.push(char);
         } else if (closing_braces.includes(char)) {
-            if (str.length == 0) {
+            if (stack.length == 0) {
                 return false;
-            }if(array[array.length-1] === macthing_braces[char]){
-                array.pop();
+            }if(stack[stack.length-1] === matching_braces[char]){
+                stack.pop();
             }else{
                 return false;
             }
         }
     }
    
-    return array.length===0;
+    return stack.length===0;
 }
 console.log(balanced_brackets('{}()'));

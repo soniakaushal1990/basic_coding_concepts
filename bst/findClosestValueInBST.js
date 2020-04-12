@@ -2,7 +2,7 @@
 //Time Complexity Avg Case O(log N) || Space Complexity  O(1)
 //Time Complexity Worst Case O(N)  |\Space Complexity  O(1)
 
-function findClosestValueInBST(tree,target){
+function findClosestValueInBst(tree,target){
     return findClosestValueInBSTHelper(tree,target,Infinity);
 }
 function findClosestValueInBSTHelper(tree,target,closest){
@@ -14,7 +14,7 @@ function findClosestValueInBSTHelper(tree,target,closest){
         if(target<currentNode.value){
             currentNode=currentNode.left;
         }
-        if(target>currentNode.value){
+        else if(target>currentNode.value){
             currentNode=currentNode.right;
         }
         else{
@@ -23,4 +23,4 @@ function findClosestValueInBSTHelper(tree,target,closest){
     }
     return closest;
 }
-exports.findClosestValueInBST=findClosestValueInBST;
+exports.findClosestValueInBST=findClosestValueInBst;

@@ -1,12 +1,12 @@
-function singleCycle(A){
-  numELementVisited=0;
+function hasSingleCycle(array) {
+  let  numELementVisited=0;
   let currentIdx=0;
-  while(numELementVisited<A.length){
+  while(numELementVisited<array.length){
       if(numELementVisited>0 && currentIdx===0) return false;
       numELementVisited++;
       currentIdx= getNextIdx(currentIdx,array);
   }
-  return currentIdx=0;
+  return currentIdx ===0;
 }
 function getNextIdx(currentIdx,array){
     const jump=array[currentIdx];

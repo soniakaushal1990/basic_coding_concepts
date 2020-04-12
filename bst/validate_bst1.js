@@ -16,10 +16,6 @@ function validate_BST(tree){
 function validate_BSTHelper(tree,minValue,maxValue){
     if(tree===null) return true;
     if(tree.value< minValue || tree.value>= maxValue) return false;
-    console.log(tree.value);
-    console.log(minValue);
-    console.log(maxValue);
-
     const leftIsValid = validate_BSTHelper(tree.left,minValue,tree.value);
     return leftIsValid && validate_BSTHelper(tree.right,tree.value,maxValue);
 }

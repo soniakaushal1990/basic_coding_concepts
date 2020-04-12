@@ -8,13 +8,13 @@
 
 
 //Attempt 1
-// function palindrome(string){
-//     let reversed = '';
-//     for(let char of string){
-//         reversed =  char+reversed;
-//     }
-//     return string === reversed;
-// }
+function palindrome(string){
+    let reversed = '';
+    for(let char of string){
+        reversed =  char+reversed;
+    }
+    return string === reversed;
+}
 
 //Attempt 2
 

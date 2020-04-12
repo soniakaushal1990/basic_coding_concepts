@@ -18,6 +18,7 @@ class minMaxStack{
         if(this.minMaxStack.length){
             const lastMinMax= this.minMaxStack[this.minMaxStack.length-1];
             newMinMax.min = Math.min(lastMinMax.min,number);
+            newMinMax.max = Math.max(lastMinMax.max,number);
         }
         this.minMaxStack.push(newMinMax);
         this.stack.push(number);

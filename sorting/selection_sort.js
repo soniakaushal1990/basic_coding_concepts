@@ -3,17 +3,15 @@
 // 1) The subarray which is already sorted.
 // 2) Remaining subarray which is unsorted.
 let array = [8, 5, 2, 9, 5, 6, 3];
-function selection_sort(array) {
+function selectionSort(array) {
     let startIdx = 0;
     while (startIdx < array.length - 1) {
         let smallestIdx = startIdx;
-        for (i = startIdx + 1; i < array.length; i++) {
-            if (array[startIdx] < array[i]) {
-                smallestIdx = array[i];
-            }
-        }
+        for (let i = startIdx + 1; i < array.length; i++) {
+            if (array[smallestIdx] > array[i]) smallestIdx = i;
+				} 
         swap(startIdx, smallestIdx, array);
-        startIdx++
+        startIdx++;		
     }
     return array;
 }
