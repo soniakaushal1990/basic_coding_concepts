@@ -1,12 +1,6 @@
 //Find highest average in JavaScript 2d array of students scores
 
-var arr = [
-    ["Bobby", "87"],
-    ["Charles", "100"],
-    ["Eric", "65"],
-    ["Charles", "22"],
-    ["Charles", "37"],
-    ["Eric", "49"]];
+var arr = [["Bob","87"], ["Mike", "35"],["Bob", "52"], ["Jessica","35"], ["Mike", "55"], ["Jessica", "99"]];
 
 function highest_score(array) {
     let hash_scores = {};
@@ -22,8 +16,7 @@ function highest_score(array) {
             highest_avrage = parseInt(array[i][1]);
         }
     }
-    const value  = Object.keys(hash_scores);
     const max = Object.keys(hash_scores).reduce((prev, curr) => Math.max(prev, hash_scores[curr]), -Infinity);
-    console.log(max);
+    console.log(hash_scores);
 }
 highest_score(arr);
