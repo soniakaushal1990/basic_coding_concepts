@@ -1,5 +1,8 @@
 
 
+
+
+// Time O(nlogn) Space O(nlogn)
 function mergeSort(array) {
     if(array.length <= 1) return array;
       const middleIdx = Math.floor(array.length/2);
