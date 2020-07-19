@@ -17,7 +17,6 @@ function findLongestStringChain(string,stringChains){
         if(!(smallerString in stringChains)) continue;
         tryUpdateLongestStringChain(string,smallerString,stringChains);
     }
-
 }
 
 function getSmallerString(string,index){
@@ -32,7 +31,6 @@ function tryUpdateLongestStringChain(currentString,smallerString,stringChains){
         stringChains[currentString].maxChainLength = smallerStringChainLength + 1;
         stringChains[currentString].nextString = smallerString;
     }
-
 }
 
 function buildLongestStringChain(strings,stringChains){
