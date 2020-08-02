@@ -23,7 +23,6 @@ let board = [
 
 
 function word_exists_in_board(board,word){
-    const visited  = board.map(row => row.map(value => false));
     let rows = board.length;
     let cols = board[0].length;
     let result = false;
@@ -34,7 +33,7 @@ function word_exists_in_board(board,word){
                 }
             }
         }  
-        return result  
+        return result;  
 }
 
 function dfs(board,word,i,j,k) {
