@@ -6,6 +6,7 @@
 
 
 function contiguousElemSumToK(array,K){
+    let potentialSum = 0;
     for(let i=0;i<array.length;i++){
         let result =[];
         let sum = array[i];
