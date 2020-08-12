@@ -17,17 +17,16 @@ function getDescendantDepth(descedant,topAncestor){
     } return depth;
 }
 
-function backTrackAncestralTree(loweDescendant,higherDescendant,diff){
-    console.log(diff);
+function backTrackAncestralTree(lowerDescendant,higherDescendant,diff){
     while(diff>0){
-        loweDescendant=loweDescendant.ancestor;
+        lowerDescendant=lowerDescendant.ancestor;
         diff--;
     }
-        while(loweDescendant !== higherDescendant){
-        loweDescendant=loweDescendant.ancestor;
+        while(lowerDescendant !== higherDescendant){
+        lowerDescendant=lowerDescendant.ancestor;
         higherDescendant=higherDescendant.ancestor;
     }
-    return loweDescendant;
+    return lowerDescendant;
 }
 
 
