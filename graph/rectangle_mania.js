@@ -1,5 +1,6 @@
 function rectangleMania(coords) {
   const coordsTable = getCoordsTable(coords);
+  console.log(coordsTable);
   return getRectangleCount(coords, coordsTable);
 }
 
@@ -10,6 +11,7 @@ function getRectangleCount(coords, coordsTable) {
       if (!isInUpperRight([x1, y1], [x2, y2])) continue;
       const upperCoordString = coordToString([x1, y2]);
       const rightCoordString = coordToString([x2, y1]);
+      console.log(upperCoordString);
       if (upperCoordString in coordsTable && rightCoordString in coordsTable)
         rectangleCount++;
     }
