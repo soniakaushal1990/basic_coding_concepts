@@ -3,9 +3,7 @@
 const BinaryTree = require("../../binary-tree/construct");
 
 let root = new BinaryTree(1);
-root.insert([2, 3]);
-root.left.insert([4, 5]);
-root.right.insert([6, 7]);
+root.insert([2, 3, 4, 5, 6, 7]);
 //console.log(root);
 
 // This problem was asked by Facebook.
@@ -18,7 +16,7 @@ function level_minimum_sum(tree) {
   let queue = [tree];
   let ansSum = tree.value;
   let level = 1;
-  let ansLevel = 0;
+  let ansLevel = 1;
   while (queue.length > 0) {
     let queue_size = queue.length;
     let sum = 0;
@@ -40,6 +38,6 @@ function level_minimum_sum(tree) {
     }
     level += 1;
   }
-  return level;
+  return ansLevel;
 }
 console.log(level_minimum_sum(root));
