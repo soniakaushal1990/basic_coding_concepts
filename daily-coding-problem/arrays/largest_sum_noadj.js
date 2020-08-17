@@ -6,6 +6,32 @@
 
 // Follow-up: Can you do this in O(N) time and constant space?
 
-function largestSumNoAdj(array) {}
+//Time O(n) | Space O(n)
 
-largestSumNoAdj([2, 4, 6, 2, 5]);
+function largestSumNoAdj(array) {
+  if (!array.length) return 0;
+  if (array.length == 1) return array[0];
+  const maxSums = array.slice();
+  maxSums[1] = Math.max(array[0], array[1]);
+  for (let i = 2; i < array.length; i++) {
+    maxSums[i] = Math.max(maxSums[i - 1], maxSums[i - 2] + array[i]);
+    console.log(maxSums);
+  }
+  return maxSums[maxSums.length - 1];
+}
+
+//Time Complexity O(n) | Space O(1)
+function largestSumNoAdj1(array) {
+  if (!array.length) return 0;
+  if (array.length === 1) return array[0];
+  let max_including_last = array[1];
+  let max_excluding_last = array[0];
+  for (let i = 2; i < array.length; i++) {
+    const current = Math.max(max_including_last, max_excluding_last + array[i]);
+    max_excluding_last = max_including_last;
+    max_including_last = current;
+  }
+  return max_including_last;
+}
+
+console.log(largestSumNoAdj1([2, 4, 6, 2, 5]));
