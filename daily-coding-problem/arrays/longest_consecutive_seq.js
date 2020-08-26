@@ -6,10 +6,21 @@ function longest_consecutive_seq(array) {
   let max_count = 0;
   for (let i = 0; i < array.length - 1; i++) {
     if (array[i + 1] === array[i] + 1) count++;
-    else count = 0;
+    else count = 1;
     max_count = Math.max(count, max_count);
   }
   return max_count;
 }
 
-console.log(longest_consecutive_seq([100, 4, 200, 1, 3, 2, 5]));
+function longest_consecutive_seq1(nums) {
+  let max_length = 0;
+  let set = {};
+  for (elem in nums) {
+    set[elem] = "";
+  }
+  for (let i = 0; i < array.length; i++) {
+      if(array[i]-1 )
+  }
+}
+
+console.log(longest_consecutive_seq1([100, 4, 200, 1, 3, 2, 5]));
