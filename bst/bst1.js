@@ -3,6 +3,8 @@ class BST{
         this.value=value;
         this.left=null;
         this.right=null;
+        this.parent = null;
+        
     }
 
     //Time Complexity Average Case O(n)   Space Complexity O(1)

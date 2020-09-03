@@ -1,42 +1,23 @@
-
-class BST{
-    constructor(value){
-       this.value=value;
-       this.left=null;
-       this.right=null;     
-
+const binaryTree = require("./binary-tree/construct");
+const root = new binaryTree(1);
+root.insert([2, 3, 4, 5]);
+console.log(root);
+function invertTree(tree){
+    const queue = [tree];
+    while(queue.length){
+        const current = queue.shift();
+        if(current === null) continue;
+        swapLeftAndRight(current);
+        queue.push(current.left);
+        queue.push(current.right);
     }
-    insert(value){
-        if(value<this.value){
-            if(this.left === null){
-                this.left= new BST(value);
-            }else{
-                this.left.insert(value);
-            }
+    return tree;
+} 
 
-        }else{
-            if(this.right === null){
-                this.right= new BST(value);
-            }else{
-                this.right.insert(value);
-            }
+function swapLeftAndRight(tree){
+    const left = tree.left;
+    tree.left =tree.right;
+    tree.right = left;
 
-        }
-
-    }
- 
-   
 }
-
-function height(node){
-    if(!node) return 0;
-    var leftHeight = height(node.left);
-    var rightHeight = height(node.right);
- 
-    return Math.max(leftHeight, rightHeight) + 1;
- }
-
-let bst = new BST(A[0]);
-for(let i=1;i<N;i++){
-        bst.insert(A[i]);   
-}  
+console.log(invertTree(root));

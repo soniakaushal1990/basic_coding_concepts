@@ -44,7 +44,6 @@ bst.right.left.right.parent = 22;
 console.log(bst);
 
 function inOrderSuccesor(node){
-    console.log(node);
     if(node.right)
     return leftmost(node.right);
 
