@@ -1,23 +1,26 @@
 const binaryTree = require("./binary-tree/construct");
-const root = new binaryTree(1);
-root.insert([2, 3, 4, 5]);
+const root = new binaryTree(10);
+root.insert([5, 5, 2, 1,-1]);
 console.log(root);
-function invertTree(tree){
-    const queue = [tree];
-    while(queue.length){
-        const current = queue.shift();
-        if(current === null) continue;
-        swapLeftAndRight(current);
-        queue.push(current.left);
-        queue.push(current.right);
-    }
-    return tree;
-} 
 
-function swapLeftAndRight(tree){
-    const left = tree.left;
-    tree.left =tree.right;
-    tree.right = left;
+function min_sum_path(node){
+    helper(node); 
+}
+
+function helper(node){
+    let min_list= [];
+    let min ;
+    if(node !== null){
+     //   console.log(node.left);
+        let left_list = helper(node.left);
+        let right_list = helper(node.right);
+        console.log(left_list);
+        min = Math.min(left_list,right_list);
+        min_list.push(min);
+        return min_list;
+    }
+
+    return [];
 
 }
-console.log(invertTree(root));
+//console.log(min_sum_path(root));
