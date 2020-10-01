@@ -10,6 +10,7 @@ function square(array) {
     array[i] = array[i] * array[i];
   }
   array.sort((a, b) => a - b);
+  process.exit();
   return array;
 }
 

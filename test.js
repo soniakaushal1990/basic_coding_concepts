@@ -1,26 +1,111 @@
-const binaryTree = require("./binary-tree/construct");
-const root = new binaryTree(10);
-root.insert([5, 5, 2, 1,-1]);
-console.log(root);
+class BinarySearchTree{
+  constructor(value){
+    this.value = value;
+    this.left=null;
+    this.right=null;
+  }
 
-function min_sum_path(node){
-    helper(node); 
-}
-
-function helper(node){
-    let min_list= [];
-    let min ;
-    if(node !== null){
-     //   console.log(node.left);
-        let left_list = helper(node.left);
-        let right_list = helper(node.right);
-        console.log(left_list);
-        min = Math.min(left_list,right_list);
-        min_list.push(min);
-        return min_list;
+  insert(value){
+    if(value < this.value){
+      if(this.left == null)
+      this.left = new BinarySearchTree(value);
+      else
+      this.left.insert(value);
+    } else {
+      if(this.right == null)
+      this.right = new BinarySearchTree(value);
+      else
+      this.right.insert(value);
     }
-
-    return [];
+  }
 
 }
-//console.log(min_sum_path(root));
+
+let bst = new BinarySearchTree(10);
+bst.insert(5);
+bst.insert(15);
+bst.insert(2);
+bst.insert(5);
+bst.insert(13);
+bst.insert(22);
+bst.insert(1);
+bst.insert(12);
+bst.insert(14);
+
+
+
+
+
+
+
+function inOrderTraversal(tree,array){
+      if(tree !== null){
+        inOrderTraversal(tree.left,array);
+        array.push(tree.value);
+        inOrderTraversal(tree.right,array);
+      }
+      return array;
+}
+
+console.log(inOrderTraversal(bst,[]));
+
+
+// function validateBST(tree){
+//   return validateBSTHelper(tree,-Infinity,Infinity);
+// }
+
+
+
+// function validateBSTHelper(tree,minValue,maxValue){
+//   if(tree == null) return true;
+//   while(tree !== null){
+//     if(tree.value < minValue || tree.value > maxValue) return false;
+//      const LeftIsValid = validateBSTHelper(tree.left,minValue,tree.value);
+//      return LeftIsValid && validateBSTHelper(tree.right,tree.value,maxValue);
+//   }
+
+// }
+// console.log(validateBSTHelper(bst));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function closestValueinBST(tree,target){
+//   return closestValueinBSTHelper(tree,target,tree.value);
+
+// }
+
+// function closestValueinBSTHelper(tree,target,closest) {
+//     let currentNode = tree;
+//     while(tree !== null){
+//       if(Math.abs(target-closest) > Math.abs(target - currentNode.value))
+//       {
+//         closest = currentNode.value;
+//       }
+//       if(target < currentNode.value){
+//         currentNode = currentNode.left;
+//       }
+//       else if(target > currentNode.value){
+//         currentNode = currentNode.right;
+//       } else {
+//         break;
+//       }
+//     }
+//     return closest;
+// }
+
+
+// console.log(closestValueinBST(bst,12));
