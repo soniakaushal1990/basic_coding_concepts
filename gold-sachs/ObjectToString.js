@@ -29,6 +29,27 @@ console.log(test(Employee,[]));
 
 
 
+var keys = {'key1':1,'key2':{'key3':2,'key4':3,'key5':{'key6':4}},
+'key7':{'key8':28,'key9':9}
+
+}, result = {};
+
+
+function serialize(keys, parentKey){
+    for(var key in keys){
+        if(typeof keys[key] == "object"){
+            console.log(parentKey+key+".");
+            serialize(keys[key], parentKey+key+".");
+           
+        }else{
+            result[parentKey+key] = keys[key];
+        }
+    }
+}
+serialize(keys, "");
+console.log(result);
+
+
 
  
  

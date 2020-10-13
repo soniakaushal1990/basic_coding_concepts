@@ -104,6 +104,3 @@ linkedlist.setTail(tail);
 linkedlist.insertBefore(head,nodeToInsert);
 linkedlist.insertBefore(nodeToInsert,nodeToInsert1);
 
-
-linkedlist.remove(tail);
-console.log(linkedlist.head);
