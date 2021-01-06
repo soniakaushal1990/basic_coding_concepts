@@ -1,3 +1,6 @@
+// Time O(N!) Space O(N!)
+
+
 function getPermutations(array) {
     const permutations = [];
     permutationHelper(0, array, permutations);

@@ -3,7 +3,7 @@ class BST{
         this.value=value;
         this.left=null;
         this.right=null;
-        this.parent = null;
+      //  this.parent = null;
         
     }
 
