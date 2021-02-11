@@ -13,7 +13,7 @@ class Node{
     depthFirstSearch(array){
         array.push(this.name);
         for(const child of this.children){
-            array.push(child);
+            child.depthFirstSearch(array);
         }
         return array;
     }
