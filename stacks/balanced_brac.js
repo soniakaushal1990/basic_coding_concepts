@@ -2,11 +2,11 @@ function balancedBrackets(string) {
     const stack = [];
     let closing_braces = '})]';
     let opening_braces = '{([';
-    let matching_braces = {
-        ')': '(',
-        ']': '[',
-        '}': '{'
-    };
+        let matching_braces = {
+            ')': '(',
+            ']': '[',
+            '}': '{'
+        };
     for (const char of string) {
         if (opening_braces.includes(char)) {      
             stack.push(char);

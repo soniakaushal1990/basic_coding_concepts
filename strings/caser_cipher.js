@@ -14,4 +14,4 @@ function getNewLetter(letter,key){
   //  console.log(key);
     return newletter;
 }
-caesarCipher("xyz",2);
+caesarCipher("ABC",29);
