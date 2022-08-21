@@ -47,15 +47,25 @@ class MinHeap {
         swap(i, j) {
             [this.value[i], this.value[j]] = [this.value[j], this.value[i]];
         }
-    }
-    // ==============
     
-   
 
-
-let nums = [3,2,1,5,6,4];
+    }
+    
+let nums = [3,2,5,6,4];
 const minHeap = new MinHeap(nums.length);
     
-for(let n of nums) minHeap.add(n);
+for(let i = 0; i < nums.length; i++){
+    minHeap.add(nums[i])
+}
+
+let index = 1;
+
+while( index < 2){
+    minHeap.remove();
+    index++;
+}
+
+
+
 
 console.log(minHeap);
