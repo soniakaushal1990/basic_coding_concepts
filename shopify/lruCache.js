@@ -1,4 +1,4 @@
-class lruCache{
+class lruCache {
     constructor(capacity){
         this.cache = new Map();
         this.capacity= capacity;
