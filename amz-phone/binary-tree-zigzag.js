@@ -26,7 +26,7 @@ function zigZag (root){
              results.push(currLevel);
              if(queue.length > 0) results.push(null);
 
-             // prepare of next level
+             // prepare for next level
 
              currLevel = [];
              isOrderLeft = ! isOrderLeft;
